@@ -1,0 +1,13 @@
+def asistan(mesaj):
+    mesaj = mesaj.lower()
+    if "merhaba" in mesaj:
+        return "Merhaba! Sana nasıl yardımcı olabilirim?"
+    elif "hava" in mesaj:
+        return "Bugün hava güzel görünüyor 🌤️"
+    else:
+        return "Bunu anlayamadım ama öğrenmeye hazırım!"
+
+# Kullanıcıdan mesaj al
+mesaj = input("Mesajını yaz: ")
+cevap = asistan(mesaj)
+print("Asistan:", cevap)
