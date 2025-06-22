@@ -1,0 +1,11 @@
+const veriHavuzu = [
+  { soru: "merhaba", cevap: "Merhaba! Sana nasıl yardımcı olabilirim?" },
+  { soru: "nasılsın", cevap: "Ben hep iyiyim, sen nasılsın?" },
+  { soru: "hava durumu", cevap: "Hava durumu için en güncel bilgileri Meteoroloji sitesinden kontrol edebilirsin." },
+  { soru: "cumhuriyet ne zaman ilan edildi", cevap: "29 Ekim 1923 tarihinde." },
+  { soru: "türkiye'nin başkenti", cevap: "Ankara, Türkiye'nin başkentidir." },
+  { soru: "en büyük gezegen", cevap: "Güneş Sistemi'nde en büyük gezegen Jüpiter'dir." },
+  { soru: "ataturk kimdir", cevap: "Mustafa Kemal Atatürk, Türkiye Cumhuriyeti'nin kurucusudur." },
+  { soru: "en uzun nehir", cevap: "Nil Nehri, dünyanın en uzun nehridir." },
+  { soru: "istanbul hangi kıtada", cevap: "Hem Avrupa hem Asya kıtasında bulunur." },
+  { soru: "dünyanın uydusu", cevap: "Ay, dünyanın doğal uydusudur." },
