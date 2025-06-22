@@ -1,18 +1,113 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Pastel AI</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #fffaf5;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .chat-container {
+      background: #fffefc;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      width: 95%;
+      max-width: 420px;
+    }
+
+    #chat-box {
+      height: 300px;
+      overflow-y: auto;
+      background: #fffbf7;
+      border: 1px solid #e5d9d0;
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    #user-input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #d6c2be;
+    }
+
+    #send-button {
+      background-color: #e8cfcf;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #5a4747;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #send-button:hover {
+      background-color: #dbbbbb;
+    }
+  </style>
 </head>
 <body>
   <div class="chat-container">
     <div id="chat-box"></div>
     <div class="input-group">
-      <input type="text" id="user-input" placeholder="Bir şey yaz..." autocomplete="off" />
-      <button id="send-button" type="button">Gönder</button>
+      <input type="text" id="user-input" placeholder="Mesaj yaz..." autocomplete="off" />
+      <button id="send-button">Gönder</button>
     </div>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    const input = document.getElementById("user-input");
+    const sendBtn = document.getElementById("send-button");
+    const chatBox = document.getElementById("chat-box");
+
+    async function sendMessage() {
+      const userText = input.value.trim();
+      if (!userText) return;
+
+      chatBox.innerHTML += `<div><strong>Sen:</strong> ${userText}</div>`;
+      input.value = "";
+
+      try {
+        const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Authorization": "Bearer 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",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            model: "openai/gpt-3.5-turbo",
+            messages: [{ role: "user", content: userText }]
+          })
+        });
+
+        const data = await response.json();
+        const reply = data.choices[0].message.content;
+        chatBox.innerHTML += `<div><strong>AI:</strong> ${reply}</div>`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+      } catch (error) {
+        chatBox.innerHTML += `<div style="color: crimson;"><em>Hata: ${error.message}</em></div>`;
+      }
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+    input.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") sendMessage();
+    });
+  </script>
 </body>
 </html>
