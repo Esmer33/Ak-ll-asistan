@@ -44,13 +44,4 @@ function benzerlikSkoru(a, b) {
     if (kelimelerB.includes(kelime)) ortak++;
   });
 
-  return ortak / kelimelerB.length;
-  // Enter tuşuna basıldığında asistanı çalıştır ve input'u temizle
-document.getElementById("soru").addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();   // Sayfanın yeniden yüklenmesini engeller
-    tahminEt();               // Cevabı çalıştır
-    this.value = "";          // Input'u temizler
-  }
-});
-}
+
