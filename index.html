@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Pastel AI</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="chat-container">
     <div id="chat-box"></div>
-    <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Mesajınızı yazın..." autocomplete="off" required>
-      <button type="submit">Gönder</button>
-    </form>
+    <div class="input-group">
+      <input type="text" id="user-input" placeholder="Bir şey yaz..." autocomplete="off" />
+      <button id="send-button">Gönder</button>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
