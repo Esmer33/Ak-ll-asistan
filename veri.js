@@ -8,4 +8,4 @@ const veriHavuzu = [
   { soru: "türkiye'nin başkenti", cevap: "Türkiye'nin başkenti Ankara'dır." },
   { soru: "en uzun nehir", cevap: "Nil Nehri, dünyanın en uzun nehridir." },
   { soru: "istanbul hangi kıtada", cevap: "İstanbul hem Avrupa hem Asya kıtasında yer alır." },
-  { soru: "dünyanın uydusu", cevap: "Dünya'nın doğal uydusu Ay'dır." },
+  { soru: "dünyanın uydusu", cevap: "Dünya'nın doğal uydusu Ay'dır." },];
