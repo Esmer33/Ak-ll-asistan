@@ -1,16 +1,13 @@
-const form = document.getElementById("chat-form");
 const input = document.getElementById("user-input");
+const sendBtn = document.getElementById("send-button");
 const chatBox = document.getElementById("chat-box");
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
+async function sendMessage() {
   const userText = input.value.trim();
   if (userText === "") return;
 
   chatBox.innerHTML += `<div><strong>Sen:</strong> ${userText}</div>`;
-// ...
-chatBox.innerHTML += `<div><strong>AI:</strong> ${reply}</div>`;
+  input.value = ""; // sadece input temizlenir
 
   const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
@@ -29,4 +26,11 @@ chatBox.innerHTML += `<div><strong>AI:</strong> ${reply}</div>`;
 
   chatBox.innerHTML += `<div><strong>AI:</strong> ${reply}</div>`;
   chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+sendBtn.addEventListener("click", sendMessage);
+input.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
 });
