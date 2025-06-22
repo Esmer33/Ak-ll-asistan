@@ -9,7 +9,8 @@ form.addEventListener("submit", async (e) => {
   if (userText === "") return;
 
   chatBox.innerHTML += `<div><strong>Sen:</strong> ${userText}</div>`;
-  input.value = ""; // Satırı temizle
+// ...
+chatBox.innerHTML += `<div><strong>AI:</strong> ${reply}</div>`;
 
   const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
