@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Asistanım</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    input, button { padding: 10px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Asistanım 🤖</h1>
+  <input id="mesaj" type="text" placeholder="Bir mesaj yaz..." />
+  <button onclick="cevapla()">Gönder</button>
+  <p id="cevap"></p>
+
+  <script>
+    function cevapla() {
+      const mesaj = document.getElementById("mesaj").value.toLowerCase();
+      let cevap = "";
+
+      if (mesaj.includes("merhaba")) {
+        cevap = "Merhaba! Sana nasıl yardımcı olabilirim?";
+      } else if (mesaj.includes("hava")) {
+        cevap = "Bugün hava güzel görünüyor 🌤️";
+      } else {
+        cevap = "Bunu anlayamadım ama öğrenmeye hazırım!";
+      }
+
+      document.getElementById("cevap").innerText = "Asistan: " + cevap;
+    }
+  </script>
+</body>
+</html>
