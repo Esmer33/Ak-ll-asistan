@@ -2,29 +2,14 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Akıllı Asistan</title>
+  <title>Pastel AI Sohbet</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="yukleniyor">
-    <div class="yuvarlak"></div>
-    <p>Asistan yükleniyor...</p>
+  <div class="chat-container">
+    <div id="chat-box"></div>
+    <input type="text" id="user-input" placeholder="Mesajınızı yazın..." autofocus />
   </div>
-
-  <h1>Akıllı Asistan 🤖</h1>
-  <input id="soru" type="text" placeholder="Bir soru sor..." />
-  <button onclick="tahminEt()">Cevapla</button>
-  <div id="cevap">🧠 Yanıt burada görünecek</div>
-
-  <script src="veri.js"></script>
-  <script src="app.js"></script>
-  // Enter tuşuna basıldığında cevapla
-document.getElementById("soru").addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    tahminEt();
-  }
-});
+  <script src="script.js"></script>
 </body>
 </html>
