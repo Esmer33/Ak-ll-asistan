@@ -15,7 +15,7 @@ chatBox.innerHTML += `<div><strong>AI:</strong> ${reply}</div>`;
   const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
-      "Authorization": "Bearer sk-BURAYA_API_ANAHTARIN",
+      "Authorization": "Bearer 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",
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
