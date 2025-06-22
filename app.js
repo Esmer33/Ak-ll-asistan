@@ -1,8 +1,11 @@
 const input = document.getElementById("user-input");
 const chatBox = document.getElementById("chat-box");
 
-input.addEventListener("keydown", async (e) => {
+input.addEventListener("keyup", async (e) => {
   if (e.key === "Enter" && input.value.trim() !== "") {
+    // geri kalan kod aynı
+  }
+});
     const userText = input.value;
     chatBox.innerHTML += `<div><strong>Sen:</strong> ${userText}</div>`;
     input.value = "";
