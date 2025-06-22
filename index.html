@@ -1,33 +1,77 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Asistanım</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akıllı Asistan</title>
   <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-    input, button { padding: 10px; font-size: 16px; }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(#0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    h1 {
+      margin-top: 60px;
+      font-size: 2.4em;
+    }
+    input, button {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+    }
+    input {
+      width: 80%;
+      max-width: 400px;
+    }
+    button {
+      background-color: #00c6ff;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 8px;
+    }
+    #cevap {
+      margin-top: 25px;
+      width: 90%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 16px;
+      border-radius: 12px;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.6em; margin-top: 40px; }
+    }
   </style>
 </head>
 <body>
-  <h1>Asistanım 🤖</h1>
-  <input id="mesaj" type="text" placeholder="Bir mesaj yaz..." />
-  <button onclick="cevapla()">Gönder</button>
-  <p id="cevap"></p>
+  <h1>Akıllı Asistan 🤖</h1>
+  <div>
+    <input type="text" id="soru" placeholder="Bana bir soru sor..." />
+    <button onclick="sor()">Cevapla</button>
+  </div>
+  <div id="cevap">🧠 Sorunun cevabı burada görünecek.</div>
 
   <script>
-    function cevapla() {
-      const mesaj = document.getElementById("mesaj").value.toLowerCase();
-      let cevap = "";
+    function sor() {
+      const input = document.getElementById("soru").value;
+      const url = `https://api.duckduckgo.com/?q=${encodeURIComponent(input)}&format=json&no_redirect=1`;
 
-      if (mesaj.includes("merhaba")) {
-        cevap = "Merhaba! Sana nasıl yardımcı olabilirim?";
-      } else if (mesaj.includes("hava")) {
-        cevap = "Bugün hava güzel görünüyor 🌤️";
-      } else {
-        cevap = "Bunu anlayamadım ama öğrenmeye hazırım!";
-      }
-
-      document.getElementById("cevap").innerText = "Asistan: " + cevap;
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          let yanit = data.AbstractText || data.Answer || "Bu konuda net bir bilgiye ulaşamadım.";
+          document.getElementById("cevap").innerText = "Asistan: " + yanit;
+        })
+        .catch(err => {
+          document.getElementById("cevap").innerText = "❌ İnternet cevabını getirirken bir hata oluştu.";
+        });
     }
   </script>
 </body>
