@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Pastel AI Sohbet</title>
+  <meta charset="UTF-8">
+  <title>Pastel AI</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="chat-container">
     <div id="chat-box"></div>
-    <input type="text" id="user-input" placeholder="Mesajınızı yazın..." autofocus />
+    <form id="chat-form">
+      <input type="text" id="user-input" placeholder="Mesajınızı yazın..." autocomplete="off" required>
+      <button type="submit">Gönder</button>
+    </form>
   </div>
   <script src="script.js"></script>
 </body>
