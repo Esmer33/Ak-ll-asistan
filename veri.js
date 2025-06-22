@@ -9,7 +9,7 @@ const veriHavuzu = [
   { soru: "en uzun nehir", cevap: "Nil Nehri, dünyanın en uzun nehridir." },
   { soru: "istanbul hangi kıtada", cevap: "Hem Avrupa hem Asya kıtasında bulunur." },
   { soru: "dünyanın uydusu", cevap: "Ay, dünyanın doğal uydusudur." },
-{ soru: "güneş sistemi", cevap: "Güneş Sistemi, Güneş ve onun etrafında dönen gezegenleri kapsar." },
+  { soru: "güneş sistemi", cevap: "Güneş Sistemi, Güneş ve onun etrafında dönen gezegenleri kapsar." },
   { soru: "gezegenler", cevap: "Güneş Sistemi'nin gezegenleri: Merkür, Venüs, Dünya, Mars, Jüpiter, Satürn, Uranüs, Neptün." },
   { soru: "venüs", cevap: "Venüs, Güneş'e en yakın ikinci gezegendir." },
   { soru: "mars", cevap: "Mars, kırmızı gezegen olarak bilinir ve Dünya'ya benzerliğiyle dikkat çeker." },
@@ -29,7 +29,7 @@ const veriHavuzu = [
   { soru: "html nedir", cevap: "HTML, web sayfalarının iskeletini oluşturan işaretleme dilidir." },
   { soru: "css nedir", cevap: "CSS, HTML içeriğinin görsel tasarımını düzenleyen stil dilidir." },
   { soru: "javascript nedir", cevap: "JavaScript, web sayfalarına etkileşim kazandıran programlama dilidir." },
-{ soru: "güneş sistemi", cevap: "Güneş Sistemi, Güneş ve onun etrafında dönen gezegenleri kapsar." },
+  { soru: "güneş sistemi", cevap: "Güneş Sistemi, Güneş ve onun etrafında dönen gezegenleri kapsar." },
   { soru: "gezegenler", cevap: "Güneş Sistemi'nin gezegenleri: Merkür, Venüs, Dünya, Mars, Jüpiter, Satürn, Uranüs, Neptün." },
   { soru: "venüs", cevap: "Venüs, Güneş'e en yakın ikinci gezegendir." },
   { soru: "mars", cevap: "Mars, kırmızı gezegen olarak bilinir ve Dünya'ya benzerliğiyle dikkat çeker." },
@@ -48,4 +48,4 @@ const veriHavuzu = [
   { soru: "donanım nedir", cevap: "Donanım, bilgisayarın elle tutulabilen fiziksel parçalarıdır." },
   { soru: "html nedir", cevap: "HTML, web sayfalarının iskeletini oluşturan işaretleme dilidir." },
   { soru: "css nedir", cevap: "CSS, HTML içeriğinin görsel tasarımını düzenleyen stil dilidir." },
-  { soru: "javascript nedir", cevap: "JavaScript, web sayfalarına etkileşim kazandıran programlama dilidir." },
+  { soru: "javascript nedir", cevap: "JavaScript, web sayfalarına etkileşim kazandıran programlama dilidir." },]
