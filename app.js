@@ -1,7 +1,7 @@
 const input = document.getElementById("user-input");
 const chatBox = document.getElementById("chat-box");
 
-input.addEventListener("keyup", async (e) => {
+input.addEventListener("keypress", async (e) => {
   if (e.key === "Enter" && input.value.trim() !== "") {
     // geri kalan kod aynı
   }
