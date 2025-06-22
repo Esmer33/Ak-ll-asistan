@@ -1,47 +1,27 @@
-// Sayfa yüklendiğinde yükleme animasyonunu gizle
-window.addEventListener("load", function () {
-  document.getElementById("yukleniyor").style.display = "none";
+const input = document.getElementById("user-input");
+const chatBox = document.getElementById("chat-box");
+
+input.addEventListener("keydown", async (e) => {
+  if (e.key === "Enter" && input.value.trim() !== "") {
+    const userText = input.value;
+    chatBox.innerHTML += `<div><strong>Sen:</strong> ${userText}</div>`;
+    input.value = "";
+
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer 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",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "openai/gpt-3.5-turbo",
+        messages: [{ role: "user", content: userText }]
+      })
+    });
+
+    const data = await response.json();
+    const botReply = data.choices[0].message.content;
+    chatBox.innerHTML += `<div><strong>AI:</strong> ${botReply}</div>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
 });
-
-// Tahmin fonksiyonu (NLP eşleşmeli)
-function tahminEt() {
-  const input = document.getElementById("soru").value.toLowerCase().trim();
-  const cevapAlani = document.getElementById("cevap");
-
-  const eslesen = enBenzerSoruyuBul(input);
-  const skor = benzerlikSkoru(input, eslesen?.soru || "");
-
-  if (eslesen && skor >= 0.3) {
-    cevapAlani.innerText = "Asistan: " + eslesen.cevap;
-  } else {
-    cevapAlani.innerText = "Asistan: Bu soruya henüz bir cevabım yok ama öğrenebilirim!";
-  }
-}
-
-// En benzer soruyu bulan basit NLP algoritması
-function enBenzerSoruyuBul(soru) {
-  let enYuksekSkor = 0;
-  let enIyiEslesen = null;
-
-  for (let i = 0; i < veriHavuzu.length; i++) {
-    const skor = benzerlikSkoru(soru, veriHavuzu[i].soru);
-    if (skor > enYuksekSkor) {
-      enYuksekSkor = skor;
-      enIyiEslesen = veriHavuzu[i];
-    }
-  }
-
-  return enIyiEslesen;
-}
-
-// Basit kelime bazlı benzerlik algoritması
-function benzerlikSkoru(a, b) {
-  const kelimelerA = a.toLowerCase().split(" ");
-  const kelimelerB = b.toLowerCase().split(" ");
-
-  let ortak = 0;
-  kelimelerA.forEach(kelime => {
-    if (kelimelerB.includes(kelime)) ortak++;
-  });
-
-
