@@ -1,47 +1,64 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dekor Asistanı</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Dekor Asistanı ⚙️</h1>
-  </header>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #2e2e2e;
+  color: #f0f0f0;
+}
 
-  <section class="actions">
-    <button>🔍 Bugün Ne Yapsam?</button>
-    <button>🧰 Malzememe Göre Ara</button>
-  </section>
+header {
+  background: linear-gradient(90deg, #c0c0c0, #8a8d8f);
+  padding: 20px;
+  text-align: center;
+  color: #2e2e2e;
+  font-size: 1.8em;
+  font-weight: bold;
+}
 
-  <section class="categories">
-    <h2>Kategoriler</h2>
-    <div class="category-list">
-      <div class="cat">Makrome</div>
-      <div class="cat">Beton</div>
-      <div class="cat">Cam</div>
-      <div class="cat">Çiçek</div>
-      <div class="cat">Ahşap</div>
-    </div>
-  </section>
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
 
-  <section class="featured">
-    <h2>Öne Çıkan Projeler</h2>
-    <div class="projects">
-      <div class="project-card">Beton Saksı</div>
-      <div class="project-card">Rose Gold Mumluk</div>
-    </div>
-  </section>
+.actions button {
+  background: linear-gradient(45deg, #b76e79, #c0c0c0);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+}
 
-  <footer>
-    <nav>
-      <a href="#">Ana</a>
-      <a href="#">Keşfet</a>
-      <a href="#">Ekle</a>
-      <a href="#">Profil</a>
-    </nav>
-  </footer>
-</body>
-</html>
+.categories, .featured {
+  padding: 20px;
+}
+
+.category-list, .projects {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cat, .project-card {
+  background-color: #b87333;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+footer {
+  background-color: #1f1f1f;
+  padding: 10px;
+  text-align: center;
+}
+
+footer nav a {
+  color: #ccc;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
