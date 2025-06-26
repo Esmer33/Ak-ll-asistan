@@ -1,5 +1,47 @@
-# Object file
-*.o
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dekor Asistanı</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Dekor Asistanı ⚙️</h1>
+  </header>
 
-# Ada Library Information
-*.ali
+  <section class="actions">
+    <button>🔍 Bugün Ne Yapsam?</button>
+    <button>🧰 Malzememe Göre Ara</button>
+  </section>
+
+  <section class="categories">
+    <h2>Kategoriler</h2>
+    <div class="category-list">
+      <div class="cat">Makrome</div>
+      <div class="cat">Beton</div>
+      <div class="cat">Cam</div>
+      <div class="cat">Çiçek</div>
+      <div class="cat">Ahşap</div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <h2>Öne Çıkan Projeler</h2>
+    <div class="projects">
+      <div class="project-card">Beton Saksı</div>
+      <div class="project-card">Rose Gold Mumluk</div>
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <a href="#">Ana</a>
+      <a href="#">Keşfet</a>
+      <a href="#">Ekle</a>
+      <a href="#">Profil</a>
+    </nav>
+  </footer>
+</body>
+</html>
